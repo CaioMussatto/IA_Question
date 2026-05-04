@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  ai-processor:
+    build: .
+    container_name: obsidian-ai
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
+    volumes:
+      - /home/caio/Documentos/Obsidian/Anotações:/app/notas:ro  # :ro = read only (segurança)
+      - ./outputs:/app/output
+      - ./prompts:/app/prompts
+    network_mode: "host"
