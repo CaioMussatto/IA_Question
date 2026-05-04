@@ -1,4 +1,4 @@
 .env
 .venv
 /outputs
-/prompts
+/__pycache__
